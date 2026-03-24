@@ -366,7 +366,7 @@ body {
 }
 
 .carousel-track-container {
-    width: 65vw;
+    flex: 1;
     overflow: hidden;
     border-radius: 10px;
     border: 1px solid rgba(0, 208, 132, 0.4);
@@ -379,7 +379,8 @@ body {
 }
 
 .carousel-item {
-    min-width: 65vw;
+    width: 100%;
+    flex-shrink: 0;
     user-select: none;
 }
 
@@ -753,6 +754,25 @@ body {
 
 /* Responsividade para Celular */
 @media (max-width: 600px) {
+    .header {
+        padding: 10px 3%;
+        height: 70px;
+        flex-wrap: wrap;
+    }
+
+    .hmasc {
+        height: 50px;
+    }
+
+    .hlbuttons {
+        gap: 8px;
+    }
+
+    .hlbuttons a {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
     .form-group-row {
         flex-direction: column;
         gap: 0;
