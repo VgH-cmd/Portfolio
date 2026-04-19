@@ -561,6 +561,7 @@ body {
 }
 
 .servico-item {
+    background: var(--cor-fundo-secundario);
     background-image: url('../_imagens/banner2.png');
     background-position: center center;
     background-attachment: fixed;
