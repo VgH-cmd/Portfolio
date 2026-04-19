@@ -538,6 +538,10 @@ body {
 #servicos {
     padding: 60px 20px;
     text-align: center;
+    background-image: url('../_imagens/banner1.png');
+    background-position: center center;
+
+
 }
 
 #servicosh2 {
@@ -557,7 +561,9 @@ body {
 }
 
 .servico-item {
-    background: var(--cor-fundo-cards);
+    background-image: url('../_imagens/banner2.png');
+    background-position: center center;
+    background-attachment: fixed;
     padding: 30px;
     border-radius: 10px;
     border: 1px solid #333;
