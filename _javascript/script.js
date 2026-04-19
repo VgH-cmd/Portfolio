@@ -60,8 +60,7 @@ window.addEventListener('scroll', () => {
             s2: { x: move + 50,   y: -move - 100, r: 12 },
             s3: { x: -move - 110, y: move - 30,   r: -8 },
             s4: { x: move + 110,  y: move - 20,   r: 18 },
-            s5: { x: -move - 200, y: -40,          r: -5 },
-            s6: { x: move + 200,  y: -40,          r: 5 }
+            s5: { x: -move - 200, y: -40,          r: -5 }
         };
 
         Object.keys(positions).forEach(key => {
@@ -173,4 +172,39 @@ if (btnPrev && btnNext && carouselItems.length > 0) {
     }
 }
 
+// Carousel de Projetos
+const projetosCarouselTrack = document.querySelector('.projetos-carousel-track');
+const projetosCards = document.querySelectorAll('.projetos-carousel-track .projeto-card');
+const projetoBtnPrev = document.querySelector('.projetos-carousel-btn.prev');
+const projetoBtnNext = document.querySelector('.projetos-carousel-btn.next');
+
+if (projetosCarouselTrack && projetosCards.length > 0) {
+    let projetoCurrentIndex = 0;
+    const cardWidth = 290; // largura do card em px
+    const cardGap = 20; // gap entre cards em px
+    const cardsPerView = 4; // máximo de cards visíveis
+
+    function updateProjetosCarousel() {
+        const totalCards = projetosCards.length;
+        // Calcula a translação para mostrar 4 cards pulando 1 de cada vez
+        const translateX = -(projetoCurrentIndex * (cardWidth + cardGap));
+        projetosCarouselTrack.style.transform = `translateX(${translateX}px)`;
+    }
+
+    if (projetoBtnNext) {
+        projetoBtnNext.addEventListener('click', () => {
+            projetoCurrentIndex = (projetoCurrentIndex + 1) % projetosCards.length;
+            updateProjetosCarousel();
+        });
+    }
+
+    if (projetoBtnPrev) {
+        projetoBtnPrev.addEventListener('click', () => {
+            projetoCurrentIndex = (projetoCurrentIndex - 1 + projetosCards.length) % projetosCards.length;
+            updateProjetosCarousel();
+        });
+    }
+
+    updateProjetosCarousel();
+}
 
