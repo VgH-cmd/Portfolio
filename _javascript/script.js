@@ -60,7 +60,8 @@ window.addEventListener('scroll', () => {
             s2: { x: move + 50,   y: -move - 100, r: 12 },
             s3: { x: -move - 110, y: move - 30,   r: -8 },
             s4: { x: move + 110,  y: move - 20,   r: 18 },
-            s5: { x: -move - 200, y: -40,          r: -5 }
+            s5: { x: -move - 200, y: -40,          r: -5 },
+            s6: { x: move + 200,  y: -40,          r: 5 }
         };
 
         Object.keys(positions).forEach(key => {
